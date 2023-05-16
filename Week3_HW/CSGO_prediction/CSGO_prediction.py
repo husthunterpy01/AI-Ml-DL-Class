@@ -34,7 +34,6 @@ parameters = {
 }
 
 y_train = np.argmax(y_train.toarray(), axis=1) # convert y_train to a numpy array before applying argmax
-lr = LogisticRegression()
 cls = GridSearchCV(LogisticRegression(), param_grid = parameters, scoring="accuracy", cv=6, verbose= 1, n_jobs=8)
 cls.fit(x_train, y_train)
 #Print the results
